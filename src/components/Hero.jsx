@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="relative mx-auto h-[520px] w-full max-w-7xl px-6 pt-8 sm:h-[560px] md:h-[600px]">
         <div className="absolute right-0 top-0 h-full w-full md:right-[-6%]">
           <Spline
-            scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode"
+            scene="https://prod.spline.design/5EwoDiC2tChvmy4K/scene.splinecode"
             style={{ width: '100%', height: '100%' }}
           />
           {/* Soft glow overlays to blend scene with the page without blocking interaction */}
