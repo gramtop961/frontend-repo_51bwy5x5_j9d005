@@ -1,6 +1,5 @@
 import React from 'react';
 import { Rocket, ShieldCheck, ArrowRight } from 'lucide-react';
-import Spline from '@splinetool/react-spline';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -14,12 +13,8 @@ const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-slate-50" />
 
-      {/* Spline 3D scene */}
-      <div className="absolute right-0 top-0 h-[520px] w-full md:w-1/2">
-        <Spline scene="https://prod.spline.design/gsJgUqg8pZpFj2qP/scene.splinecode" style={{ width: '100%', height: '100%' }} />
-        {/* Soft gradient overlay to blend with background */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-white/90 via-white/70 to-transparent" />
-      </div>
+      {/* Decorative gradient illustration instead of external 3D for stability */}
+      <div className="pointer-events-none absolute right-[-20%] top-[-10%] h-[620px] w-[1200px] rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-100 via-indigo-100 to-transparent blur-3xl" />
 
       {/* Content */}
       <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-24 sm:pt-28 md:pt-32">
@@ -49,11 +44,11 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="max-w-xl text-lg leading-relaxed text-slate-600"
           >
-            A clean, light interface with guided 3D visuals that makes complex study data simple—
+            A clean, light interface with guided visuals that makes complex study data simple—
             from eCRFs and edit checks to randomization and audit trails.
           </motion.p>
 
-          <motion.div
+        <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}

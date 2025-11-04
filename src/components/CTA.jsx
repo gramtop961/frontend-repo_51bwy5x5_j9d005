@@ -49,7 +49,7 @@ const CTA = () => {
           ) : (
             <div className="mx-auto mt-6 flex max-w-md items-center justify-center gap-2 text-emerald-700">
               <CheckCircle className="h-5 w-5" />
-              <span>Thanks! Well be in touch shortly.</span>
+              <span>Thanks! We'll be in touch shortly.</span>
             </div>
           )}
         </div>
