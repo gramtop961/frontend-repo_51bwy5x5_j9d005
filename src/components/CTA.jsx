@@ -14,7 +14,7 @@ const CTA = () => {
 
   return (
     <section id="cta" className="relative py-20">
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white" />
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-50 via-white to-slate-50" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm">
           <motion.h3
@@ -35,12 +35,12 @@ const CTA = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Work email"
-                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm focus:border-slate-400 focus:outline-none"
+                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm focus:border-sky-400 focus:outline-none"
                 required
               />
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-4 py-3 text-white shadow-lg shadow-sky-600/20 transition hover:-translate-y-0.5 hover:bg-sky-700"
               >
                 Request demo
                 <ArrowRight className="h-5 w-5" />

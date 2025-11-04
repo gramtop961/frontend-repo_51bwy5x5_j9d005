@@ -11,24 +11,24 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Background base */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-slate-50" />
+      {/* Full-bleed light gradient foundation */}
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-50 via-white to-slate-50" />
 
-      {/* 3D Scene */}
-      <div className="relative mx-auto h-[520px] w-full max-w-7xl px-6 pt-8 sm:h-[560px] md:h-[600px]">
-        <div className="absolute right-0 top-0 h-full w-full md:right-[-6%]">
+      {/* 3D Scene as cover background */}
+      <div className="relative mx-auto h-[560px] w-full max-w-7xl px-6 pt-8 sm:h-[600px] md:h-[640px]">
+        <div className="absolute right-0 top-0 h-full w-full md:right-[-2%]">
           <Spline
-            scene="https://prod.spline.design/5EwoDiC2tChvmy4K/scene.splinecode"
+            scene="https://prod.spline.design/xW-uaUprkPUPPfRw/scene.splinecode"
             style={{ width: '100%', height: '100%' }}
           />
-          {/* Soft glow overlays to blend scene with the page without blocking interaction */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-white/70 via-white/40 to-transparent" />
-          <div className="pointer-events-none absolute -right-40 top-10 h-80 w-80 rounded-full bg-sky-200/40 blur-3xl" />
+          {/* Light overlays to blend darker scene without blocking interaction */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-white/80 via-white/50 to-transparent" />
+          <div className="pointer-events-none absolute -right-32 top-14 h-96 w-96 rounded-full bg-sky-200/40 blur-3xl" />
         </div>
 
         {/* Content */}
         <div className="relative z-10 max-w-2xl pt-10">
-          {/* Top micro-badge */}
+          {/* Compliance badge */}
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ const Hero = () => {
           >
             <button
               onClick={() => handleScroll('features')}
-              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:shadow-slate-900/20"
+              className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-white shadow-lg shadow-sky-600/20 transition hover:-translate-y-0.5 hover:bg-sky-700"
             >
               <Rocket className="h-5 w-5" />
               Explore capabilities
@@ -87,7 +87,7 @@ const Hero = () => {
             </button>
           </motion.div>
 
-          {/* Social proof row */}
+          {/* Social proof */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -28,7 +28,7 @@ const features = [
 const Features = () => {
   return (
     <section id="features" className="relative py-20">
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50 to-white" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl text-slate-900 sm:text-4xl">Built for quality clinical data</h2>
@@ -48,7 +48,7 @@ const Features = () => {
               className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"
             >
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50">
                   {f.icon}
                 </div>
                 <div>

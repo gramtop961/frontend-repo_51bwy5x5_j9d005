@@ -27,8 +27,8 @@ const steps = [
 
 const Workflow = () => {
   return (
-    <section className="relative py-20">
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-white" />
+    <section id="workflow" className="relative py-20">
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-sky-50" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl text-slate-900 sm:text-4xl">A guided path from protocol to submission</h2>
@@ -46,7 +46,7 @@ const Workflow = () => {
               className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-50 text-slate-700">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-50 text-slate-700">
                   {s.icon}
                 </div>
                 <span className="text-sm font-medium text-slate-500">Step {idx + 1}</span>
