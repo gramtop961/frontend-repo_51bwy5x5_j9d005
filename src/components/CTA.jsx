@@ -1,61 +1,46 @@
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from 'react';
 
-const CTA = () => {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (!email) return;
-    setSubmitted(true);
-  };
-
+export default function CTA() {
   return (
-    <section id="cta" className="relative py-20">
-      <div className="absolute inset-0 bg-gradient-to-b from-sky-50 via-white to-slate-50" />
-      <div className="relative mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl overflow-hidden rounded-3xl border border-sky-200 bg-white p-8 text-center shadow-sm">
-          <motion.h3
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-display text-2xl text-slate-900 sm:text-3xl"
-          >
-            See EDC that feels effortless
-          </motion.h3>
-          <p className="mt-3 text-slate-600">Book a live walkthrough tailored to your protocol and timelines.</p>
+    <section
+      id="contact"
+      className="relative w-full border-t border-sky-200 bg-gradient-to-b from-sky-50 via-white to-slate-50"
+    >
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-sky-200 bg-gradient-to-b from-white via-sky-50 to-white p-8 shadow-sm">
+          <h2 className="text-2xl font-semibold text-slate-800 md:text-3xl">See it in action</h2>
+          <p className="mt-2 text-slate-600">Request a demo to explore forms, monitoring, and export workflows.</p>
 
-          {!submitted ? (
-            <form onSubmit={onSubmit} className="mx-auto mt-6 flex max-w-md items-center gap-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Work email"
-                className="w-full rounded-xl border border-sky-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm focus:border-sky-400 focus:outline-none"
-                required
-              />
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-4 py-3 text-white shadow-lg shadow-sky-600/20 transition hover:-translate-y-0.5 hover:bg-sky-700"
-              >
-                Request demo
-                <ArrowRight className="h-5 w-5" />
-              </button>
-            </form>
-          ) : (
-            <div className="mx-auto mt-6 flex max-w-md items-center justify-center gap-2 text-emerald-700">
-              <CheckCircle className="h-5 w-5" />
-              <span>Thanks! We'll be in touch shortly.</span>
-            </div>
-          )}
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2"
+          >
+            <input
+              type="text"
+              required
+              placeholder="Full name"
+              className="w-full rounded-lg border border-sky-200 bg-white px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-600/30"
+            />
+            <input
+              type="email"
+              required
+              placeholder="Work email"
+              className="w-full rounded-lg border border-sky-200 bg-white px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-600/30"
+            />
+            <input
+              type="text"
+              placeholder="Organization"
+              className="w-full rounded-lg border border-sky-200 bg-white px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-600/30 sm:col-span-2"
+            />
+            <button
+              type="submit"
+              className="sm:col-span-2 inline-flex items-center justify-center rounded-lg bg-sky-600 px-5 py-3 font-medium text-white shadow-lg shadow-sky-600/20 transition hover:bg-sky-700"
+            >
+              Request demo
+            </button>
+          </form>
         </div>
       </div>
     </section>
   );
-};
-
-export default CTA;
+}

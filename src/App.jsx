@@ -4,22 +4,34 @@ import Features from './components/Features';
 import Workflow from './components/Workflow';
 import CTA from './components/CTA';
 
-const App = () => {
+export default function App() {
+  const handleScroll = (e, target) => {
+    e.preventDefault();
+    const el = document.getElementById(target);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-100 via-white to-slate-50 text-slate-900">
-      {/* Top navigation */}
-      <header className="sticky top-0 z-50 w-full border-b border-sky-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2">
-            <div className="h-6 w-6 rounded-md bg-sky-600" />
-            <span className="font-semibold">Clarity EDC</span>
+    <div className="min-h-screen w-full bg-gradient-to-b from-sky-100 via-white to-slate-50">
+      {/* Sticky navigation */}
+      <header className="sticky top-0 z-50 w-full backdrop-blur bg-white/70 border-b border-sky-200">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+          <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="text-lg font-semibold text-slate-800">
+            HelixEDC
+          </a>
+          <div className="hidden gap-6 md:flex">
+            <a href="#features" onClick={(e) => handleScroll(e, 'features')} className="text-slate-700 hover:text-sky-700">Features</a>
+            <a href="#workflow" onClick={(e) => handleScroll(e, 'workflow')} className="text-slate-700 hover:text-sky-700">Workflow</a>
+            <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="text-slate-700 hover:text-sky-700">Contact</a>
           </div>
-          <nav className="hidden gap-6 text-sm text-slate-600 sm:flex">
-            <a href="#features" className="hover:text-slate-900">Capabilities</a>
-            <a href="#workflow" className="hover:text-slate-900">Workflow</a>
-            <a href="#cta" className="hover:text-slate-900">Request demo</a>
-          </nav>
-        </div>
+          <a
+            href="#contact"
+            onClick={(e) => handleScroll(e, 'contact')}
+            className="hidden rounded-lg bg-sky-600 px-4 py-2 text-white shadow-sm transition hover:bg-sky-700 md:inline-flex"
+          >
+            Request demo
+          </a>
+        </nav>
       </header>
 
       <main>
@@ -29,18 +41,16 @@ const App = () => {
         <CTA />
       </main>
 
-      <footer className="border-t border-sky-200 bg-gradient-to-t from-slate-50 via-white to-transparent py-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
-          <p className="text-sm text-slate-500">© {new Date().getFullYear()} Clarity EDC. All rights reserved.</p>
-          <div className="flex gap-5 text-sm text-slate-500">
-            <a href="#" className="hover:text-slate-700">Privacy</a>
-            <a href="#" className="hover:text-slate-700">Security</a>
-            <a href="#" className="hover:text-slate-700">Status</a>
+      <footer className="border-t border-sky-200 bg-gradient-to-b from-white via-slate-50 to-sky-50">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-8 text-sm text-slate-600">
+          <span>© {new Date().getFullYear()} HelixEDC</span>
+          <div className="flex gap-4">
+            <a href="#features" onClick={(e) => handleScroll(e, 'features')} className="hover:text-sky-700">Features</a>
+            <a href="#workflow" onClick={(e) => handleScroll(e, 'workflow')} className="hover:text-sky-700">Workflow</a>
+            <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="hover:text-sky-700">Top</a>
           </div>
         </div>
       </footer>
     </div>
   );
-};
-
-export default App;
+}
