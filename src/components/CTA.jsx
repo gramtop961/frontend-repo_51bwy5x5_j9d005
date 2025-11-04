@@ -16,7 +16,7 @@ const CTA = () => {
     <section id="cta" className="relative py-20">
       <div className="absolute inset-0 bg-gradient-to-b from-sky-50 via-white to-slate-50" />
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+        <div className="mx-auto max-w-2xl overflow-hidden rounded-3xl border border-sky-200 bg-white p-8 text-center shadow-sm">
           <motion.h3
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const CTA = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Work email"
-                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm focus:border-sky-400 focus:outline-none"
+                className="w-full rounded-xl border border-sky-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm focus:border-sky-400 focus:outline-none"
                 required
               />
               <button

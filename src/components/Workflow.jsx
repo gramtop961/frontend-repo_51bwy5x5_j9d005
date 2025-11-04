@@ -43,7 +43,7 @@ const Workflow = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: idx * 0.05 }}
-              className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+              className="relative rounded-2xl border border-sky-200 bg-white p-6 shadow-sm"
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-50 text-slate-700">
