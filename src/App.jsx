@@ -1,28 +1,48 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Workflow from './components/Workflow';
+import CTA from './components/CTA';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-slate-900">
+      {/* Simple top nav */}
+      <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded-md bg-slate-900" />
+            <span className="font-semibold">Clarity EDC</span>
+          </div>
+          <nav className="hidden gap-6 text-sm text-slate-600 sm:flex">
+            <a href="#features" className="hover:text-slate-900">Capabilities</a>
+            <a href="#workflow" className="hover:text-slate-900">Workflow</a>
+            <a href="#cta" className="hover:text-slate-900">Request demo</a>
+          </nav>
         </div>
-      </div>
-    </div>
-  )
-}
+      </header>
 
-export default App
+      <main>
+        <Hero />
+        <div id="workflow">
+          <Features />
+          <Workflow />
+        </div>
+        <CTA />
+      </main>
+
+      <footer className="border-t border-slate-200 bg-white py-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
+          <p className="text-sm text-slate-500">© {new Date().getFullYear()} Clarity EDC. All rights reserved.</p>
+          <div className="flex gap-5 text-sm text-slate-500">
+            <a href="#" className="hover:text-slate-700">Privacy</a>
+            <a href="#" className="hover:text-slate-700">Security</a>
+            <a href="#" className="hover:text-slate-700">Status</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
